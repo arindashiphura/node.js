@@ -1,0 +1,27 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Crop Registration
+  link(rel='stylesheet' href='/css/login.css')
+.container
+  h2 Register Crop
+  form#cropForm(action="/cropreg" method="POST")
+    .form-group
+      label(for='cropName') Crop Name:
+      input#cropName(type='text' name='cropName')
+      #cropNameError.error
+    .form-group
+      label(for='cropType') Crop Type:
+      input#cropType(type='text' name='cropType')
+      #cropTypeError.error
+    .form-group
+      label(for='quantity') Quantity (in tons):
+      input#quantity(type='number' name='quantity')
+      #quantityError.error
+    .form-group
+      label(for='date') Date:
+      input#date(type='date' name='date')
+      #dateError.error
+    button(type='submit') Register Crop
+//- a.()

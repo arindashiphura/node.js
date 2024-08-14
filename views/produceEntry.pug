@@ -1,0 +1,33 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Record Produce Entry
+  link(rel='stylesheet' href='/css/produceEntry.css')
+.container
+  h1 Record Produce Entry
+  form#produceForm(action="/produceEntry" method="POST")
+    label(for='produceName') Produce Name:
+    input#produceName(type='text' name='produceName' required='')
+    label(for='produceType') Produce Type:
+    input#produceType(type='text' name='produceType' required='')
+    label(for='date') Date:
+    input#date(type='date' name='date' required='')
+    label(for='time') Time:
+    input#time(type='time' name='time' required='')
+    label(for='tonnage') Tonnage (kg):
+    input#tonnage(type='number' name='tonnage' required='' min='1000')
+    label(for='cost') Cost (UgX):
+    input#cost(type='number' name='cost' required='' min='10000')
+    label(for='dealerName') Dealer&apos;s Name:
+    input#dealerName(type='text' name='dealerName' required='')
+    label(for='branch') Branch Name:
+    select#branch(name='branch' required='')
+      option(value='Maganjo') Maganjo
+      option(value='Matugga') Matugga
+    label(for='contact') Contact:
+    input#contact(type='tel' name='contact' required='' pattern='[0-9]{10}')
+    label(for='price') Selling Price (UgX):
+    input#price(type='number' name='price' required='' min='10000')
+    button(type='submit') Submit
+script(src="/js/produceEntry.js")

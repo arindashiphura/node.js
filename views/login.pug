@@ -1,0 +1,52 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Create Account
+  link(rel ='stylesheet' href='/css/login.css')
+.form-container(action="/login" method="POST")
+  h2 Create Account
+  form#registrationForm
+    .form-group
+      label(for='username') Username
+      input#username(type='text' name='username' placeholder='Enter Username' required='')
+    .form-group
+      label(for='password') Password
+      input#password(type='password' name='password' placeholder='Enter Password' required='')
+    .form-group
+      label(for='confirmPassword') Confirm Password
+      input#confirmPassword(type='password' name='confirmPassword' placeholder='Confirm Password' required='')
+      span#passwordError.error
+    button#submitBtn.submit-btn(type='submit') Submit
+script.
+  document.getElementById('registrationForm').addEventListener('input', function () {
+  validateForm();
+  });
+  function validateForm() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  const submitBtn = document.getElementById('submitBtn');
+  const errorElement = document.getElementById('passwordError');
+  let isValid = true;
+  if (!username || !password || !confirmPassword) {
+  isValid = false;
+  }
+  if (password !== confirmPassword) {
+  errorElement.textContent = 'Passwords do not match';
+  errorElement.classList.remove('success');
+  errorElement.classList.add('error');
+  isValid = false;
+  } else {
+  errorElement.textContent = 'Passwords match';
+  errorElement.classList.remove('error');
+  errorElement.classList.add('success');
+  }
+  if (isValid) {
+  submitBtn.classList.add('enabled');
+  submitBtn.disabled = false;
+  } else {
+  submitBtn.classList.remove('enabled');
+  submitBtn.disabled = true;
+  }
+  }

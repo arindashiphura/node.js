@@ -1,0 +1,79 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Produce Sold on Credit
+  style.
+    body {
+    font-family: Arial, sans-serif;
+    }
+    form {
+    max-width: 500px;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    }
+    div {
+    margin-bottom: 1em;
+    }
+    label {
+    margin-bottom: 0.5em;
+    color: #333333;
+    display: block;
+    }
+    input {
+    border: 1px solid #cccccc;
+    padding: 0.5em;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    }
+    button {
+    padding: 1em;
+    color: #fff;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    }
+    button:hover {
+    background-color: green;
+    }
+h2 Produce Sold on Credit
+form#creditForm(action="/crops" method="POST")
+  div
+    label(for='buyerName') Name of the Buyer:
+    input#buyerName(type='text' name='buyerName' minlength='2' pattern='[A-Za-z0-9 ]+' required='')
+  div
+    label(for='nationalId') National ID (NIN):
+    input#nationalId(type='text' name='nationalId' pattern='[A-Za-z0-9]{13}' required='')
+  div
+    label(for='location') Location:
+    input#location(type='text' name='location' minlength='2' pattern='[A-Za-z0-9 ]+' required='')
+  div
+    label(for='contacts') Contacts (Phone):
+    input#contacts(type='tel' name='contacts' pattern='^\+256\d{9}$' required='' placeholder='+256XXXXXXXXX')
+  div
+    label(for='amountDue') Amount Due (UGX):
+    //- input#amountDue(type='text' name='amountDue' pattern='\d{5,}' required='')
+  div
+    label(for='salesAgentName') Sales Agent Name:
+    input#salesAgentName(type='text' name='salesAgentName' minlength='2' pattern='[A-Za-z0-9 ]+' required='')
+  div
+    label(for='dueDate') Due Date:
+    input#dueDate(type='date' name='dueDate' required='')
+  label(for='produceName') Produce Name:
+  input#produceName(type='text' name='produceName' minlength='2' required='' pattern='[A-Za-z0-9\s]+')
+  div
+    label(for='produceType') Produce Type:
+    input#produceType(type='text' name='produceType' required='')
+  div
+    label(for='tonnage') Tonnage:
+    input#tonnage(type='number' name='tonnage' required='')
+  div
+    label(for='dispatchDate') Date of Dispatch:
+    input#dispatchDate(type='date' name='dispatchDate' required='')
+  button(type='submit') Submit

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produce Sold on Credit</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      form {
+        max-width: 500px;
+        margin: auto;
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em;
+        
+      }
+      div {
+        margin-bottom: 1em;
+      }
+      label {
+        margin-bottom: 0.5em;
+        color: #333333;
+        display: block;
+      }
+      input {
+        border: 1px solid #cccccc;
+        padding: 0.5em;
+        font-size: 1em;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 5px;
+      }
+      button {
+        padding: 1em;
+        color: #fff;
+        background-color: green;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      button:hover {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Produce Sold on Credit</h2>
+    <form id="creditForm">
+      <div>
+        <label for="buyerName">Name of the Buyer:</label>
+        <input
+          type="text"
+          id="buyerName"
+          name="buyerName"
+          minlength="2"
+          pattern="[A-Za-z0-9 ]+"
+          required
+        />
+      </div>
+      <div>
+        <label for="nationalId">National ID (NIN):</label>
+        <input
+          type="text"
+          id="nationalId"
+          name="nationalId"
+          pattern="[A-Za-z0-9]{13}"
+          required
+        />
+      </div>
+      <div>
+        <label for="location">Location:</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          minlength="2"
+          pattern="[A-Za-z0-9 ]+"
+          required
+        />
+      </div>
+      <div>
+        <label for="contacts">Contacts (Phone):</label>
+        <input
+          type="tel"
+          id="contacts"
+          name="contacts"
+          pattern="^\+256\d{9}$"
+          required
+          placeholder="+256XXXXXXXXX"
+        />
+      </div>
+      <div>
+        <label for="amountDue">Amount Due (UGX):</label>
+        <!-- <input type="text" id="amountDue" name="amountDue" pattern="\d{5,}" required/> -->
+      </div>
+      <div>
+        <label for="salesAgentName">Sales Agent Name:</label>
+        <input
+          type="text" id="salesAgentName" name="salesAgentName" minlength="2" pattern="[A-Za-z0-9 ]+" required />
+      </div>
+      <div>
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" name="dueDate" required />
+      </div>
+      <label for="produceName">Produce Name:</label>
+      <input
+        type="text" id="produceName" name="produceName" minlength="2" required pattern="[A-Za-z0-9\s]+"
+      />
+      <div>
+        <label for="produceType">Produce Type:</label>
+        <input type="text" id="produceType" name="produceType" required />
+      </div>
+
+      <div>
+        <label for="tonnage">Tonnage:</label>
+        <input type="number" id="tonnage" name="tonnage" required />
+      </div>
+
+      <div>
+        <label for="dispatchDate">Date of Dispatch:</label>
+        <input type="date" id="dispatchDate" name="dispatchDate" required />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

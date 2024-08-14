@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/form.css">
+</head>
+<body>
+    
+<main class="form-section" style="background-color: rgb(24, 210, 24);">
+    <h1>Register Here</h1>
+    <form id="register-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"  placeholder="Enter Username"required /><br />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter Email" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter Password" required />
+
+      <label for="corfirmpassword">Corfirm Password</label>
+      <input type="password"  id="corfirmpassword" name="corfirmpassword"  placeholder="Corfirm password" required /> 
+      <span id="passwordError" class="error"></span>
+
+
+      <label for="branch">Branch</label>
+      <select id="branch" name="branch" required>
+        <option value="maganju">Maganjo</option>
+        <option value="matuga">Matuga</option>
+      </select>
+
+      <label for="role">Role</label>
+      <select id="role" name="role" required>
+        <option value="administrator">Administrator</option>
+        <option value="manager">Manager</option>
+        <option value="sales_agent">Sales Agent</option>
+      </select>
+
+      <input
+        type="submit"
+        class="btn btn-primary custom-button"
+        value="Register"
+      />
+
+      <p>Already have an account? <a href="login.html">Login here</a></p>
+    </form>
+  </main>
+
+</body>
+</html>
